@@ -1,0 +1,29 @@
+name: Bug report
+description: Report a gameplay, loading or device issue.
+body:
+  - type: input
+    id: device
+    attributes:
+      label: Device and operating system
+      placeholder: iPhone 15 Pro, iOS 27
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and version
+      placeholder: Safari
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce and expected result
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: What happened? Attach a screenshot if helpful.
+    validations:
+      required: true

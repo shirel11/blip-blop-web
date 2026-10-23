@@ -1,0 +1,47 @@
+# Local SDK, duplicate checkout and private machine state
+emsdk/
+original/
+.build/
+node_modules/
+tools/node_modules/
+.agents/
+.codex/
+.env
+.env.*
+!.env.example
+*.log
+compile.rsp
+link.rsp
+output/
+dist/
+release-artifacts/
+__pycache__/
+
+# Source assets can be restored losslessly from the distributed game package.
+port/data/
+web/public/resources/game.data
+web/public/resources/game.js
+web/public/resources/game.wasm
+web/public/engine.js
+web/public/index.html
+port/*.ncb
+port/*.opt
+port/*.plg
+port/*.pdb
+port/*.ilk
+port/*.exe
+port/*.dll
+port/*.obj
+port/*.idb
+
+# One-time local migration and host upload helpers
+prepare_port.py
+tools/fix_startup.py
+tools/instrument_port.py
+tools/diagnose.cjs
+tools/check-game.cjs
+tools/mobile-check.cjs
+tools/web_game_playwright_client.mjs
+tools/upload_assets.py
+progress.md
+deployment.json

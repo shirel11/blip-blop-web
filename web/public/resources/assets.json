@@ -1,0 +1,769 @@
+{
+  "format": 1,
+  "sdk": "6.0.13",
+  "uncompressedBytes": 124430180,
+  "files": [
+    {
+      "name": "ammo1.lft",
+      "start": 0,
+      "end": 3570,
+      "sha256": "499ce7cbaaed82042b771cb6657cfb0fd040675ea8c1e7a4de715da604422e5b"
+    },
+    {
+      "name": "ammo2.lft",
+      "start": 3570,
+      "end": 7132,
+      "sha256": "253b6953641bff3b63619331fe0740dabd8984abb89cec7590ad4d8174f3321f"
+    },
+    {
+      "name": "bb.cfg",
+      "start": 7132,
+      "end": 7193,
+      "sha256": "dbdce022af3a478720a2cd492bbf515b3582f07760ff0aa104d65660b4538b35"
+    },
+    {
+      "name": "bb.gfx",
+      "start": 7193,
+      "end": 169947,
+      "sha256": "e141eadd9bf5c97eca478bc4d091dc78d25fe1615e88c0e0acbb40e8f8f66dd7"
+    },
+    {
+      "name": "bb.lst",
+      "start": 169947,
+      "end": 170423,
+      "sha256": "a819c194fc234bfcc4b6222aaea71288f0b775e608a8da6e7acd81f187657b53"
+    },
+    {
+      "name": "bb.scr",
+      "start": 170423,
+      "end": 170667,
+      "sha256": "80763fd1524899b6e6038a89a1220a93cde55e1fe9e81ceeb80d8c87a81cf635"
+    },
+    {
+      "name": "bb.sfx",
+      "start": 170667,
+      "end": 538237,
+      "sha256": "72ac1c14d01a7b071aa1955f3685c4a69d5f578c9f67858a6f0eaaeabc89acd8"
+    },
+    {
+      "name": "bisou.mbk",
+      "start": 538237,
+      "end": 538293,
+      "sha256": "b7f5181d38757f20dba20f56d396ad984e10a81ced0a82751b690277fa01db5e"
+    },
+    {
+      "name": "bisou.sfx",
+      "start": 538293,
+      "end": 1126443,
+      "sha256": "5570bdce30c63f9a6a94263c851c92fdcc255ca61edcf7f0ad32697adce84e04"
+    },
+    {
+      "name": "bisou.zik",
+      "start": 1126443,
+      "end": 4696921,
+      "sha256": "0bde32ac2dba8dbd7a188c66a219c54c313afdf8d92ab8b3ebbfffbf1a8439a8"
+    },
+    {
+      "name": "bisou1.rpg",
+      "start": 4696921,
+      "end": 4697603,
+      "sha256": "5733809b244ac641aa02d2aeb116653cbffaaea90809f364ba60f8d4a85772b0"
+    },
+    {
+      "name": "bisoudec1.gfx",
+      "start": 4697603,
+      "end": 9612983,
+      "sha256": "ada955d9072ccc79cf3ef7845999adf34054d9743bcdd21ef06224c8c91f8b04"
+    },
+    {
+      "name": "bisoudec2.gfx",
+      "start": 9612983,
+      "end": 13913941,
+      "sha256": "9b90d28d2d6d6d7627120461618bc64be1dc55eb4f162350aa3f9c09add2fe26"
+    },
+    {
+      "name": "bisoudec3.gfx",
+      "start": 13913941,
+      "end": 21287009,
+      "sha256": "20369857c4e43a57e3d24207a30d8424f391e2f9058e97fd1ba61764185a353b"
+    },
+    {
+      "name": "bisouenn.gfx",
+      "start": 21287009,
+      "end": 22796575,
+      "sha256": "220d2744a0d704e0347f6a168c3535183530937a6406432f727fd0a518b14aee"
+    },
+    {
+      "name": "bisoufond.gfx",
+      "start": 22796575,
+      "end": 22959921,
+      "sha256": "70d7774ee9e99431e2ed62ba2250f9e71b28c99595051641e166c950950db401"
+    },
+    {
+      "name": "bisoufond3.gfx",
+      "start": 22959921,
+      "end": 23054945,
+      "sha256": "47e637d853c30b0479846593ad2fddd78e5472f0f72a9c6068ca111f754b5745"
+    },
+    {
+      "name": "bisourpg.gfx",
+      "start": 23054945,
+      "end": 23098561,
+      "sha256": "ca90f4dfaff43fbd4b2eeeb13e04d47e41f4810862b575f0e99a32b30f38f315"
+    },
+    {
+      "name": "bisous1.lvl",
+      "start": 23098561,
+      "end": 23376221,
+      "sha256": "04ae4913563d7ea647f7de66b44087a5d9d4671385e3e9a9b9e0a98c57e4361e"
+    },
+    {
+      "name": "bisous2.lvl",
+      "start": 23376221,
+      "end": 23651301,
+      "sha256": "66e3491fa775c83f840bc98d8049ddb5cd15f56db69fd655d905c9c76b937248"
+    },
+    {
+      "name": "bisous3.lvl",
+      "start": 23651301,
+      "end": 24047737,
+      "sha256": "6d62dd476a8a6dbf75624ec1142a38886d6a034ae09b2793bb0ca480f87cf578"
+    },
+    {
+      "name": "blip.gfx",
+      "start": 24047737,
+      "end": 24250113,
+      "sha256": "ae60dd4ab44019163ccedf3c1b460dfbf2904c404deebdbe8ee5a0bf7d82b8ff"
+    },
+    {
+      "name": "blop.gfx",
+      "start": 24250113,
+      "end": 24483173,
+      "sha256": "2e356d5622d35cdf131188e049baea9d646c8d9d247f11bec2d60edb1ebb6986"
+    },
+    {
+      "name": "boss.sfx",
+      "start": 24483173,
+      "end": 24647623,
+      "sha256": "2f45fb42791ca78c3d71a3f9fb5cb8aa575fc01c276e07aed9b36c5ad26970f2"
+    },
+    {
+      "name": "boss.zik",
+      "start": 24647623,
+      "end": 25190589,
+      "sha256": "2c4a015e34841700360d4b923ae3fc1459ce45529f5cf335483352a01ad21906"
+    },
+    {
+      "name": "bossrpg.gfx",
+      "start": 25190589,
+      "end": 25252497,
+      "sha256": "ddcc9b07cc20fe3562de31b62f6d4f063c82b0d8f07996efb93135e6f4bcb067"
+    },
+    {
+      "name": "brief1.gfx",
+      "start": 25252497,
+      "end": 25833643,
+      "sha256": "e27b1f86ceb9872ba9a1f9f814ee6f071c03ad3ae04f9c1676c0e51ab6351f44"
+    },
+    {
+      "name": "brief1_1.gfx",
+      "start": 25833643,
+      "end": 26409669,
+      "sha256": "ad887a28792cc721d112830023a53d18c64082299cf86ff0c4d7cd57bb3521fa"
+    },
+    {
+      "name": "brief2.gfx",
+      "start": 26409669,
+      "end": 26990815,
+      "sha256": "41bf394f6e224b6d421b39153cb5dae1616278cf4c91319126690d27188e24c1"
+    },
+    {
+      "name": "brief3.gfx",
+      "start": 26990815,
+      "end": 27571961,
+      "sha256": "604229e8ce9aae21ba96c71c9434bfefb827acf0dc77d09cd72fc70a4be3430b"
+    },
+    {
+      "name": "brief3_1.gfx",
+      "start": 27571961,
+      "end": 28146707,
+      "sha256": "4a6499490d44e9285eba2c666a4b157be9b46b7c116d6880a22c6543675b1ca8"
+    },
+    {
+      "name": "brief4.gfx",
+      "start": 28146707,
+      "end": 28727853,
+      "sha256": "98eb340950b428160081b223af791c6e43aa4f24680edccc145813eda30f0e18"
+    },
+    {
+      "name": "brief5.gfx",
+      "start": 28727853,
+      "end": 29308999,
+      "sha256": "3aecb2640c4792931ec6d97dd4171fe264120336b40b1632e5aca4ea843eb878"
+    },
+    {
+      "name": "brief6.gfx",
+      "start": 29308999,
+      "end": 29890145,
+      "sha256": "0ed7561cb7f7ef93d6bea4b8f862a08764b75a2b7a0a227520181aab6e26aa25"
+    },
+    {
+      "name": "brief6_1.gfx",
+      "start": 29890145,
+      "end": 30466171,
+      "sha256": "758e3741dc8f35bf7b900ead37557562503dac3ee4cc0bcc6e22f3f3242ff814"
+    },
+    {
+      "name": "brief7.gfx",
+      "start": 30466171,
+      "end": 31047317,
+      "sha256": "d97b08b3e31d7acdf908bf33d8b7df95f948716692b60be1c8d1e4292654de57"
+    },
+    {
+      "name": "cool.lft",
+      "start": 31047317,
+      "end": 31065299,
+      "sha256": "69820b93e6a36d6d5c809148153a10ada710c505d1410af024cfa2c195286243"
+    },
+    {
+      "name": "credits.gfx",
+      "start": 31065299,
+      "end": 32024819,
+      "sha256": "362233411c3ebabd55737c34224ba8c2da5dfd0ebd94747d2c12f4b48292a606"
+    },
+    {
+      "name": "credits.mbk",
+      "start": 32024819,
+      "end": 32024857,
+      "sha256": "a079d9a7d8dd861a593ac521e45f1f2a5a5096bb96a8ac20356cfa59357c61ed"
+    },
+    {
+      "name": "credits.zik",
+      "start": 32024857,
+      "end": 33182519,
+      "sha256": "58d40af5193f281e58edb9ba204854318dbeb66b22d6b8d60725d1814fe8f4ad"
+    },
+    {
+      "name": "dork.lvl",
+      "start": 33182519,
+      "end": 33338763,
+      "sha256": "7185b0df2316c05dd2d8138886f5f32a5932dac19e59e6b984ec58f7d54f7efc"
+    },
+    {
+      "name": "dork.mbk",
+      "start": 33338763,
+      "end": 33338781,
+      "sha256": "d6c067f5c338dc32f58c6f0202a055fe711592e8f21b5a967147f807dc4db468"
+    },
+    {
+      "name": "dork.sfx",
+      "start": 33338781,
+      "end": 33384589,
+      "sha256": "8416efa3068c0f5f248302dffd17c5d6a85fab0dbb175ce15931a304842657f0"
+    },
+    {
+      "name": "dork.zik",
+      "start": 33384589,
+      "end": 34919013,
+      "sha256": "f29bd9b1a2f121eabde1fc56ec9c03fb448ed768fcc5536e6e83357f554e406e"
+    },
+    {
+      "name": "dorkfonda.gfx",
+      "start": 34919013,
+      "end": 36376543,
+      "sha256": "d687669741a24fc18774e4f5008e3de1957e45cdb7ef2f64cc39b65e5101ce37"
+    },
+    {
+      "name": "end.cin",
+      "start": 36376543,
+      "end": 36378080,
+      "sha256": "3c3d81a930814becb30bdaf1a038a86d2d2abb86ed13b06ddc4ea8766f163d0d"
+    },
+    {
+      "name": "end.gfx",
+      "start": 36378080,
+      "end": 38707522,
+      "sha256": "7eaab3fa51482da70fb586aa4b6259494d1f2b4c40a1dd06742f344f7867cb0a"
+    },
+    {
+      "name": "end.mbk",
+      "start": 38707522,
+      "end": 38707541,
+      "sha256": "940fcaef4aefd21533437957e7a98e35161b5fb81481eb8c15ed01f94d5ba732"
+    },
+    {
+      "name": "endlevel.zik",
+      "start": 38707541,
+      "end": 38787002,
+      "sha256": "cf35a0f070fdd0e0a267ff025c96da7d8f3ebe65fcee98e6fbd51d5b20289d48"
+    },
+    {
+      "name": "finalboss.lvl",
+      "start": 38787002,
+      "end": 38910882,
+      "sha256": "f7f2fbc1b9ae61766650b5bc4dc12fd1d0952118bc34d97208487ea35b3754bb"
+    },
+    {
+      "name": "finalboss.mbk",
+      "start": 38910882,
+      "end": 38910901,
+      "sha256": "3202fbee8b70f3a397a5e5b5e220e7ce1a760af1ab065df47c75f717e20dafd7"
+    },
+    {
+      "name": "finalboss.rpg",
+      "start": 38910901,
+      "end": 38911343,
+      "sha256": "f178bb58eb9015624425bd93dd0ea1a0b124ec23ec4ca1fcab8482d720da4888"
+    },
+    {
+      "name": "finalbossenn.gfx",
+      "start": 38911343,
+      "end": 39188031,
+      "sha256": "a619de98d3ff983f299f4fd98e10f1bc9c0892eb281139469bcd19c950e0f032"
+    },
+    {
+      "name": "finalbossfond.gfx",
+      "start": 39188031,
+      "end": 41031301,
+      "sha256": "fbb798be8e8950f398b9e0a41be9fdd54cdbb09f636e57ad3618ffc10571936e"
+    },
+    {
+      "name": "finalbossfonda.gfx",
+      "start": 41031301,
+      "end": 41319117,
+      "sha256": "7e85e24345b9a274c8c5535430be32b575b4f92691f911e626a69c0fdcd31c27"
+    },
+    {
+      "name": "finalbossrpg.gfx",
+      "start": 41319117,
+      "end": 41332663,
+      "sha256": "af675a3817778ac92ea196a09e4f65bc6c8a51d16d73650d11f18969e0e6ed7c"
+    },
+    {
+      "name": "gameover.zik",
+      "start": 41332663,
+      "end": 41430464,
+      "sha256": "68366f6959066575ccf4e5183470398b31c76c7737c63fdc5bbd251fd903eb26"
+    },
+    {
+      "name": "hard.zik",
+      "start": 41430464,
+      "end": 41454112,
+      "sha256": "f2db5c43c5e2c7068fb3470b0a64a5674d38fcea1273062b4d63e820f16580a8"
+    },
+    {
+      "name": "inter.gfx",
+      "start": 41454112,
+      "end": 42671298,
+      "sha256": "c6b7f90342adf8f62ddb4f2a8df72d838974d22e43e2a01e8e1ee2be0f8a36b5"
+    },
+    {
+      "name": "inter.mbk",
+      "start": 42671298,
+      "end": 42671363,
+      "sha256": "37e80e932a3490320c3e22dd52618d7d3b252778cb3be9e26e33d020a6ef45df"
+    },
+    {
+      "name": "interl.mbk",
+      "start": 42671363,
+      "end": 42671384,
+      "sha256": "2e6117a9251e9c2856764cc077525497d968f549b252be367dd8c49fdce7ad55"
+    },
+    {
+      "name": "intro.cin",
+      "start": 42671384,
+      "end": 42675292,
+      "sha256": "16499305ebb4cc11dadd4b4130539fd862dd1c7f93fdb2a1f0de56e9bab33602"
+    },
+    {
+      "name": "intro.gfx",
+      "start": 42675292,
+      "end": 45500752,
+      "sha256": "d47dffa9b486dbd5c3dbde7bc72fbda2a305ee75d26b6fe77429ea58e5ba3ce9"
+    },
+    {
+      "name": "lem.lvl",
+      "start": 45500752,
+      "end": 45624572,
+      "sha256": "dc60d3a918b44ead31f876fbde87cb33617a5238ec6290c9add0c29a17a36cb8"
+    },
+    {
+      "name": "lem.mbk",
+      "start": 45624572,
+      "end": 45624589,
+      "sha256": "a403f6cb44ce5c81b6687db2722a25a13b8708a0f2fd5728a291ab964b8953f4"
+    },
+    {
+      "name": "lem.rpg",
+      "start": 45624589,
+      "end": 45624862,
+      "sha256": "bab750cd18020ac584e3a9e29b7c36d06a7385ede8ed794c795579f863e418cc"
+    },
+    {
+      "name": "lem.sfx",
+      "start": 45624862,
+      "end": 45703606,
+      "sha256": "8c0281414dbc2e0629581b8a6c1a8a47ee9ffd3f620f1a23008934e38900b5ec"
+    },
+    {
+      "name": "lem.zik",
+      "start": 45703606,
+      "end": 46880229,
+      "sha256": "8f0bc07e3c93ac6afb7d80edc89b4ba233f0838863b238e778f3bfab86bd0fb3"
+    },
+    {
+      "name": "lemdec.gfx",
+      "start": 46880229,
+      "end": 48723499,
+      "sha256": "2a705b5e98b334224010d133302c5f54b4a17175dd8fb62dbde3766f25489eb1"
+    },
+    {
+      "name": "lemenn.gfx",
+      "start": 48723499,
+      "end": 48851759,
+      "sha256": "f611d3e006f67ad35f6fc53f80b79360ff70a8cee4b2179da5f9f36c550b9902"
+    },
+    {
+      "name": "lemfond.gfx",
+      "start": 48851759,
+      "end": 49869523,
+      "sha256": "e07e3b828b6a4c5d78a8093658bbd5effefaaffcae1b171f859e4db68fbe8691"
+    },
+    {
+      "name": "menu.lft",
+      "start": 49869523,
+      "end": 49887505,
+      "sha256": "69820b93e6a36d6d5c809148153a10ada710c505d1410af024cfa2c195286243"
+    },
+    {
+      "name": "menus.lft",
+      "start": 49887505,
+      "end": 49905237,
+      "sha256": "91f52a85886e11fc0cc8c37cc04fd07c29c6d6e321270f410cdb337095c7a7d8"
+    },
+    {
+      "name": "misc.gfx",
+      "start": 49905237,
+      "end": 49958159,
+      "sha256": "c95ab78ab96623f7b37b87a4a825561316f0f74919040cb7e9d8993c4589bbb2"
+    },
+    {
+      "name": "misc.sfx",
+      "start": 49958159,
+      "end": 50464521,
+      "sha256": "dcf502e996fb3bac6585f6c1c6c3961078fc6394c34642f171df86d80fa603d2"
+    },
+    {
+      "name": "orgue.zik",
+      "start": 50464521,
+      "end": 50519101,
+      "sha256": "6df32d143b1c4f0926114ec0850bc91594108aded61d2a9cb9dda3369f6f743c"
+    },
+    {
+      "name": "pokeenn.gfx",
+      "start": 50519101,
+      "end": 51236961,
+      "sha256": "07c8700f4c033739a16862d24855a2356651cb81d8d71b09f2760daf221c73f7"
+    },
+    {
+      "name": "pokefond.gfx",
+      "start": 51236961,
+      "end": 53694653,
+      "sha256": "e2a43d7c78087eb3d448a2bba610fa5413993fc23913b25f0d77e2d9704f8511"
+    },
+    {
+      "name": "rpg.lft",
+      "start": 53694653,
+      "end": 53712333,
+      "sha256": "5387657cf9b8ff2002bd9334828a033c60364ff84403682d35a943de2def12aa"
+    },
+    {
+      "name": "rpg_bb.gfx",
+      "start": 53712333,
+      "end": 53890565,
+      "sha256": "ab297e795797919a4ec7da5ac1a05af2621d3c71532346695c667de2e13e58d2"
+    },
+    {
+      "name": "scorei.lft",
+      "start": 53890565,
+      "end": 53893657,
+      "sha256": "70f73fa9ba440247150c5a3a36a4cab14d253a423139372cda7f58e449d2d169"
+    },
+    {
+      "name": "scoreo.lft",
+      "start": 53893657,
+      "end": 53896755,
+      "sha256": "b439c0de23f075205d944dc0e90b6d9e6f583450ef12eb7b2fbdb5a746e8001a"
+    },
+    {
+      "name": "smurf.sfx",
+      "start": 53896755,
+      "end": 54871431,
+      "sha256": "103cc8b61ed716eb2bf1a5db41fecce4fedf4412da8adc4f6b2359cf301878aa"
+    },
+    {
+      "name": "snork.mbk",
+      "start": 54871431,
+      "end": 54871467,
+      "sha256": "deedf5914b9fe0c6e067a83c73dd8b21ddd42bc47e639e99b46d4c9f07185a71"
+    },
+    {
+      "name": "snork.rpg",
+      "start": 54871467,
+      "end": 54872162,
+      "sha256": "e4fe8dc0892cfe5fa377941d4968e6fd49695d6713f465412761e6df5ccbe794"
+    },
+    {
+      "name": "snork.sfx",
+      "start": 54872162,
+      "end": 55282480,
+      "sha256": "5e8eb700757ef3b4d6b092ad442aadc17d9d659fef0c784aa5153cdd55e1879c"
+    },
+    {
+      "name": "snork.zik",
+      "start": 55282480,
+      "end": 58284620,
+      "sha256": "a73cc849a5e74bdc83c09a6745d198d3ef842c47e5553e4b0719f7526a49c62a"
+    },
+    {
+      "name": "snorkdec.gfx",
+      "start": 58284620,
+      "end": 60742312,
+      "sha256": "900bf70654fdcbf4aec46cfa9e8b58e018d0b6bb1a5cc5906b8f3b1bbfc7bcc6"
+    },
+    {
+      "name": "snorkenn2.gfx",
+      "start": 60742312,
+      "end": 61731818,
+      "sha256": "fc5b90f7787320164bb7f55f0bf794e77d82d01a129503bb8530e8affe89ca06"
+    },
+    {
+      "name": "snorkfond1.gfx",
+      "start": 61731818,
+      "end": 70334690,
+      "sha256": "f45be8172db9b674aac5f51174f7f2e86243a92f1b49e74a35c9e9d850441be0"
+    },
+    {
+      "name": "snorkfond2.gfx",
+      "start": 70334690,
+      "end": 74021226,
+      "sha256": "6eb8ad49a19e61b776980085477b4d05e9bf6a1548f6e194054c95934a316a3d"
+    },
+    {
+      "name": "snorkfonda.gfx",
+      "start": 74021226,
+      "end": 74703078,
+      "sha256": "337de369f025ca40bc829b495df9cc587ac82495450c173a458822e398912e63"
+    },
+    {
+      "name": "snorkniv.lvl",
+      "start": 74703078,
+      "end": 75131579,
+      "sha256": "67f33ee39afb381097031f8bb6b9d5a14da3a498327d161272df4882f2736810"
+    },
+    {
+      "name": "snorkniv2.lvl",
+      "start": 75131579,
+      "end": 75439144,
+      "sha256": "bc2eb099e66d859b1c966945ebcf6e7e7b3f469fcc198728cce9af8cc3f32370"
+    },
+    {
+      "name": "snorkrpg.gfx",
+      "start": 75439144,
+      "end": 75450610,
+      "sha256": "ed027c1d4363b96e6f85c8cde0a9a65a093cb46a7f7733be3d17b53345d2d8a5"
+    },
+    {
+      "name": "snuf.mbk",
+      "start": 75450610,
+      "end": 75450667,
+      "sha256": "4f8af8c261bb3b0b56fd3439070fd2aad664d17a6ed76104f9f5967248c48fec"
+    },
+    {
+      "name": "snuf.mp3",
+      "start": 75450667,
+      "end": 77837621,
+      "sha256": "ab6338942415a96fcbe363a7d9ba536cf5f21aa486bfbaa05d94882c3425b5a1"
+    },
+    {
+      "name": "snuf.zik",
+      "start": 77837621,
+      "end": 80204180,
+      "sha256": "752a029f376d4058c9d70d2178e9252ff8e532b220f703fea10269488cd306cb"
+    },
+    {
+      "name": "snuf1.lvl",
+      "start": 80204180,
+      "end": 80605116,
+      "sha256": "a85d2f4409bc2ddf145a25d92d5971c74c48747a4faaa2e3c46d2b309088e0fc"
+    },
+    {
+      "name": "snuf2.lvl",
+      "start": 80605116,
+      "end": 81006892,
+      "sha256": "3695656395e2811811383db2610229040696ef20143b3a6e3f30197aa94fd1f4"
+    },
+    {
+      "name": "snufdec1.gfx",
+      "start": 81006892,
+      "end": 87151116,
+      "sha256": "8686a2ae5cf54ff33ee05b6bf57b647c786b013c5426e855cbc1a7f0017fa6cd"
+    },
+    {
+      "name": "snufdec2.gfx",
+      "start": 87151116,
+      "end": 93909762,
+      "sha256": "ec2c5fc764199d271b572886d0d108027380ccac9a422a7a1136e4ce583a70e8"
+    },
+    {
+      "name": "snufenn.gfx",
+      "start": 93909762,
+      "end": 94576814,
+      "sha256": "82e32476f08b3566bbc21ddc42c736e5d56374cbc8c5b5326bf9f9afa51e1f9b"
+    },
+    {
+      "name": "snuff.rpg",
+      "start": 94576814,
+      "end": 94577751,
+      "sha256": "bf889ce3aa7176b3c867f5f7843c344c319d4c3ffed4bf09659c9b0b6e1afdb5"
+    },
+    {
+      "name": "snufpplan1.gfx",
+      "start": 94577751,
+      "end": 94677839,
+      "sha256": "ad872d8f5bc5b3f7e8a8bebb1161ee1088777217e8437a75e158da5103391ccf"
+    },
+    {
+      "name": "snufrpg.gfx",
+      "start": 94677839,
+      "end": 94690611,
+      "sha256": "bde5ed32e34f4a967c629416931933928c29a0260b490af0373a13628aaeb6ef"
+    },
+    {
+      "name": "suspens.zik",
+      "start": 94690611,
+      "end": 94740501,
+      "sha256": "86a2522ff290d1009cb8244bfae9ced0fcc926fdd798b22b8a0675c65db74679"
+    },
+    {
+      "name": "tambour.zik",
+      "start": 94740501,
+      "end": 94763069,
+      "sha256": "e39490783aba8031793ccb249911bc92b070ab6fd8d4e3f670bbc1ddb18ec6a2"
+    },
+    {
+      "name": "theend.gfx",
+      "start": 94763069,
+      "end": 95777845,
+      "sha256": "3451ff9c1d210f00679ac720dcb00a80b751b397d73fd28a7961ca4e75caa080"
+    },
+    {
+      "name": "theme.mp3",
+      "start": 95777845,
+      "end": 98038935,
+      "sha256": "98c6962ea0303f6e7407751c459ed9d733863b575d197b5f51496fb2b72b375b"
+    },
+    {
+      "name": "theme.zik",
+      "start": 98038935,
+      "end": 100218153,
+      "sha256": "8915f33471612cc265f9651e341e926dce2ed4ef6404dbbb2e2e2408253f91c3"
+    },
+    {
+      "name": "uk.dat",
+      "start": 100218153,
+      "end": 100223711,
+      "sha256": "e733d42bba70247d32fc3f9f77010176f6013efdb9b9758e86321a5f0e5d3af1"
+    },
+    {
+      "name": "vidboss.zik",
+      "start": 100223711,
+      "end": 103644235,
+      "sha256": "7edf08e268450711a7e12bb896efefecf22908c784fcba6640f80fb086f13a07"
+    },
+    {
+      "name": "video.lvl",
+      "start": 103644235,
+      "end": 104202371,
+      "sha256": "4c167c527bee1ec566f470d022bc335463d4305653e7a08b2af2cf65dd22fff6"
+    },
+    {
+      "name": "video.mbk",
+      "start": 104202371,
+      "end": 104202407,
+      "sha256": "60b53100d848fa4f2abc5d1f74a08ca4104c7873318ed777d240678c8ce53c97"
+    },
+    {
+      "name": "video.rpg",
+      "start": 104202407,
+      "end": 104203595,
+      "sha256": "be9b4907169d0e890e99e9b779994c209e09d92dbe26b7af4d473e4ab3f3a552"
+    },
+    {
+      "name": "video.sfx",
+      "start": 104203595,
+      "end": 105037767,
+      "sha256": "b7809df9bd8813b804028d5adf5c965f100607f6794b47d63cd4a1d7159e7cd5"
+    },
+    {
+      "name": "video.zik",
+      "start": 105037767,
+      "end": 106579570,
+      "sha256": "b27f557294815cfb9ddaa779146594217cd47162267d09071934068d44cb0e05"
+    },
+    {
+      "name": "videoboss.lvl",
+      "start": 106579570,
+      "end": 106702070,
+      "sha256": "18b458075516138d4af7b5de2ce3d4cc055c7ed335e4fda6e48b4800266b4876"
+    },
+    {
+      "name": "videoboss.mbk",
+      "start": 106702070,
+      "end": 106702111,
+      "sha256": "43cdb0f67f7c306d43351f75eb897f973e68e62bbf74cb9064e5b77b77ccb2a7"
+    },
+    {
+      "name": "videoboss.rpg",
+      "start": 106702111,
+      "end": 106703104,
+      "sha256": "60efe8243562b244602ce2b704bc6924a9e61f1cdbe8160a4be301139c0d980e"
+    },
+    {
+      "name": "videobossenn.gfx",
+      "start": 106703104,
+      "end": 107816352,
+      "sha256": "3edb28d4b09fb87cea33aaf59053786f93d3be4a94bf3c82bc3160d4bf22f4e3"
+    },
+    {
+      "name": "videoenn.gfx",
+      "start": 107816352,
+      "end": 109716908,
+      "sha256": "5bebd4250eb56322242d875c265c8829c29aa9c9c196fa2548b77380ba9b5da1"
+    },
+    {
+      "name": "videofond.gfx",
+      "start": 109716908,
+      "end": 120776508,
+      "sha256": "f5b0f28ebbaf9ae44f2fc7b848219897b84dca9734558be2404d7ebd5aa67f9b"
+    },
+    {
+      "name": "videofonda.gfx",
+      "start": 120776508,
+      "end": 121325242,
+      "sha256": "7bc58e59981ab88334e59421a28c508c3d69a2d06c6cbe0411f3a0506d4384c3"
+    },
+    {
+      "name": "videofondboss.gfx",
+      "start": 122010574,
+      "end": 124396044,
+      "sha256": "4bef213eb144e79ba42efed2a5c1dc1a10addd73e6b09dbe95a13ce674080082"
+    },
+    {
+      "name": "videorpg.gfx",
+      "start": 124396044,
+      "end": 124430180,
+      "sha256": "22bbb819c2e6bc529af1d6eb614fb617c904efe7d15d584f3125a6c2e07445cb"
+    }
+  ]
+}

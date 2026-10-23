@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#121a18" />
+    <title>Blip & Blop — Play in your browser</title>
+    <meta
+      name="description"
+      content="The classic arcade adventure, ready to play in your browser. Keyboard and touch controls. English and Hebrew. No installation."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blip & Blop — The arcade is back" />
+    <meta
+      property="og:description"
+      content="Jump in. Team up. Play the classic arcade adventure in your browser, with keyboard or touch controls."
+    />
+    <meta
+      property="og:url"
+      content="https://shirel11.github.io/blip-blop-web/"
+    />
+    <meta
+      property="og:image"
+      content="https://shirel11.github.io/blip-blop-web/resources/share.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://shirel11.github.io/blip-blop-web/" />
+    <link rel="stylesheet" href="./app.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <header class="site-header">
+        <div class="brand">
+          <span class="edition">2002 / WEB EDITION</span>
+          <h1 dir="ltr">BLIP <span>&</span> BLOP</h1>
+          <p data-i18n="tagline">הארקייד חוזר. פשוט פותחים ומשחקים.</p>
+        </div>
+        <nav aria-label="Website controls">
+          <button id="language" lang="en" dir="auto">English</button
+          ><button id="share" data-i18n="share">שיתוף</button>
+        </nav>
+      </header>
+      <section id="game-shell" aria-label="Blip and Blop game">
+        <div class="game-toolbar">
+          <span class="live-label" data-i18n="browserEdition"
+            >BROWSER EDITION</span
+          >
+          <div class="toolbar-actions">
+            <button id="pause" disabled data-i18n="pause">השהיה</button
+            ><button id="focus" data-i18n="focus">מצב משחק ⛶</button
+            ><button
+              id="help-toggle"
+              aria-expanded="false"
+              aria-controls="instructions"
+              data-i18n="help"
+            >
+              איך משחקים?
+            </button>
+          </div>
+        </div>
+        <p id="orientation-hint" data-i18n="rotate">
+          ליותר מקום למשחק, כדאי לסובב את הטלפון לרוחב.
+        </p>
+        <div id="stage">
+          <div
+            class="touch-panel movement-panel"
+            aria-label="Movement controls"
+          >
+            <div id="dpad" class="dpad" aria-label="Directional pad">
+              <button
+                class="dir-up"
+                data-direction="ArrowUp"
+                aria-label="Aim up"
+              >
+                ▲</button
+              ><button
+                class="dir-left"
+                data-direction="ArrowLeft"
+                aria-label="Move left"
+              >
+                ◀</button
+              ><span class="pad-center" aria-hidden="true">+</span
+              ><button
+                class="dir-right"
+                data-direction="ArrowRight"
+                aria-label="Move right"
+              >
+                ▶</button
+              ><button
+                class="dir-down"
+                data-direction="ArrowDown"
+                aria-label="Aim down"
+              >
+                ▼
+              </button>
+            </div>
+            <span class="control-caption" data-i18n="move">תנועה / כיוון</span>
+          </div>
+          <div id="screen">
+            <canvas
+              id="game"
+              width="640"
+              height="480"
+              tabindex="0"
+              aria-label="Blip and Blop game screen"
+            ></canvas>
+            <div id="cover">
+              <div class="cover-mark" aria-hidden="true"><i></i><i></i></div>
+              <p class="cover-eyebrow" data-i18n="readyPlayer">
+                ההרפתקה מחכה לכם
+              </p>
+              <h2 dir="ltr">LET'S PLAY.</h2>
+              <p class="intro" data-i18n="intro">
+                המשחק הקלאסי, ישירות בדפדפן. בחרו דמות וצאו להרפתקה.
+              </p>
+              <button id="start" class="primary" data-i18n="load">
+                טען את המשחק
+              </button>
+              <p
+                id="status"
+                role="status"
+                aria-live="polite"
+                data-i18n="downloadNote"
+              >
+                טעינה ראשונה: כ־53MB. מומלץ חיבור Wi-Fi.
+              </p>
+              <progress id="progress" value="0" max="100" hidden></progress>
+            </div>
+            <div id="context-message" role="status" hidden></div>
+          </div>
+          <div class="touch-panel action-panel" aria-label="Action controls">
+            <div class="action-buttons">
+              <button class="jump" data-key="x" data-i18n="jump">קפיצה</button
+              ><button class="fire" data-key="z" data-i18n="fire">ירי</button
+              ><button class="bomb" data-key=" " data-i18n="bomb">פרה</button
+              ><button class="confirm" data-key="Enter" data-i18n="confirm">
+                אישור
+              </button>
+            </div>
+            <span class="control-caption" data-i18n="holdHint"
+              >אפשר להחזיק תנועה וירי יחד</span
+            >
+          </div>
+        </div>
+        <div class="keyboard-hint">
+          <span
+            ><kbd>← ↑ ↓ →</kbd>
+            <span data-i18n="move">תנועה / כיוון</span></span
+          ><span><kbd>Z</kbd> <span data-i18n="fire">ירי</span></span
+          ><span><kbd>X</kbd> <span data-i18n="jump">קפיצה</span></span
+          ><span><kbd>Space</kbd> <span data-i18n="bomb">פרה</span></span
+          ><span><kbd>Enter</kbd> <span data-i18n="confirm">אישור</span></span>
+        </div>
+      </section>
+      <dialog id="instructions" aria-labelledby="help-heading">
+        <button id="help-close" data-i18n="close">סגירה</button>
+        <div>
+          <h2 id="help-heading" data-i18n="howTitle">בוחרים דמות, ומתחילים</h2>
+          <p data-i18n="howBody">
+            בתפריט המשחק בחרו Start Game ואז One Player, ואשרו דמות עם Enter או
+            אישור. לחצו שוב כדי להתקדם במסכי הסיפור. אפשר גם לשחק בשניים עם
+            מקלדת אחת.
+          </p>
+          <p data-i18n="phoneTip">
+            בנייד: החליקו על משטח הכיוונים והחזיקו את כפתורי הירי והקפיצה באגודל
+            השני. מצב משחק מסתיר את שולי האתר. אפשר לחזור ממנו בכל רגע.
+          </p>
+        </div>
+        <div>
+          <h2 data-i18n="keyboardTitle">מקלדת ושחקן נוסף</h2>
+          <p data-i18n="keyboardBody">
+            שחקן 1: חצים, Z לירי, X לקפיצה, Space לפצצה. Esc להשהיה. שחקן 2: Q /
+            S / D / F לכיוונים, Tab לירי, G לקפיצה ו־H לפצצה.
+          </p>
+          <p data-i18n="languageNote">
+            האתר תומך בעברית ובאנגלית. התפריטים והסיפור המקוריים בתוך המשחק הם
+            באנגלית.
+          </p>
+          <button id="restart" data-i18n="restart">התחלה מחדש</button>
+        </div>
+      </dialog>
+      <footer>
+        <span data-i18n="credits"
+          >המשחק המקורי: Loaded Studio. התאמת דפדפן קהילתית.</span
+        ><a
+          href="https://github.com/shirel11/blip-blop-web"
+          target="_blank"
+          rel="noopener"
+          data-i18n="source"
+          >קוד ופיתוח</a
+        ><span id="share-status" role="status" aria-live="polite"></span>
+      </footer>
+    </main>
+  </body>
+</html>

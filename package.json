@@ -1,0 +1,12 @@
+{
+  "name": "blip-blop-web",
+  "version": "0.2.0",
+  "private": true,
+  "description": "A bilingual browser edition of the classic arcade game with keyboard and touch controls.",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/serve.mjs",
+    "check": "node --check web/public/app.js && node scripts/check.mjs"
+  },
+  "engines": { "node": ">=20" }
+}

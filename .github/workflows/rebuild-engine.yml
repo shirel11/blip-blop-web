@@ -1,0 +1,22 @@
+name: Rebuild WebAssembly engine
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  engine:
+    runs-on: ubuntu-latest
+    container: emscripten/emsdk:6.0.13
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/unpack_assets.py
+      - run: python3 tools/build_port.py
+      - run: python3 tools/package_assets.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: browser-engine
+          path: |
+            web/public/engine-v2.js
+            web/public/resources/game-v2.wasm
+            web/public/resources/game.data.gz
+            web/public/resources/assets.json

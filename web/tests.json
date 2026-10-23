@@ -1,0 +1,76 @@
+[
+  {
+    "name": "Bilingual startup and original gameplay",
+    "sanity": true,
+    "viewport": "desktop",
+    "covers": [
+      "English and Hebrew UI",
+      "persisted language and RTL",
+      "streaming load",
+      "original menus and opening level",
+      "keyboard movement jump fire"
+    ],
+    "description": "Switch languages, load the engine and play the opening level.",
+    "steps": [
+      "Switch to English if needed, then toggle to Hebrew and reload; verify Hebrew RTL is retained. Toggle back to English.",
+      "Click Load game, wait for Play now, and click it. Use Escape to skip the intro, then Enter with a short hold through Start Game, one player, character selection and briefings.",
+      "Hold ArrowRight, Z and X to move, fire and jump in the original level."
+    ],
+    "expected": "Language selection survives reload and gameplay visibly responds without an engine startup error."
+  },
+  {
+    "name": "Mobile landscape touch play",
+    "viewport": "mobile",
+    "covers": [
+      "portrait layout",
+      "landscape game mode",
+      "multi-touch controls",
+      "direction dragging",
+      "released touch state"
+    ],
+    "description": "Use the independent movement and action controls on a phone.",
+    "steps": [
+      "Load and start the game. Use OK to navigate the original menus and choose a character.",
+      "Use a landscape phone viewport. Verify the directional pad and action buttons flank the game without covering it.",
+      "Hold right on the pad while holding Fire, slide to another direction, use Jump, then release all touches.",
+      "Leave and return to the tab."
+    ],
+    "expected": "Movement and action controls fit the phone viewport, can be held together, and do not remain stuck after release or tab switching."
+  },
+  {
+    "name": "Pause, help and game-mode recovery",
+    "viewport": "desktop",
+    "covers": [
+      "native pause resume",
+      "help dialog",
+      "game mode exit",
+      "keyboard help"
+    ],
+    "description": "Pause and resume the current run and open accessible instructions.",
+    "steps": [
+      "Load and start a one-player game through the original menus.",
+      "Click Pause and confirm the original pause menu stays visible. Click Resume to continue.",
+      "Open How to play, read the controls, close the dialog and continue the same run.",
+      "Enter Game mode and use Exit game mode to return."
+    ],
+    "expected": "The pause menu persists until resumed, help opens and closes, and game mode can be exited without restarting the run."
+  },
+  {
+    "name": "Cancel restart to protect the current run",
+    "viewport": "desktop",
+    "covers": [
+      "restart confirmation guardrail",
+      "restart outcome",
+      "new source link",
+      "share metadata"
+    ],
+    "description": "Reject an accidental restart, then confirm an intentional reset.",
+    "steps": [
+      "Load and start a game, then open How to play.",
+      "Choose Restart game and cancel its confirmation. Close help and verify the run remains available.",
+      "Open help again, choose Restart game, and accept its confirmation.",
+      "Verify Source & development points to shirel11/blip-blop-web and no prior repository is advertised."
+    ],
+    "expected": "Cancelling keeps the run; confirming returns to the initial load screen. The page identifies the new public source project."
+  }
+]
