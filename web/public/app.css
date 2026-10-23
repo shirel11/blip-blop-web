@@ -515,7 +515,8 @@ a {
     height: 100dvh;
     border: 0;
     border-radius: 0;
-    padding-inline: var(--safe-left) var(--safe-right);
+    padding-left: var(--safe-left);
+    padding-right: var(--safe-right);
   }
   .touch:is(.running, .immersive) .game-toolbar {
     height: 38px;
@@ -562,7 +563,8 @@ body.immersive {
   height: 100dvh;
   border: 0;
   border-radius: 0;
-  padding-inline: var(--safe-left) var(--safe-right);
+  padding-left: var(--safe-left);
+  padding-right: var(--safe-right);
 }
 .immersive:not(.touch) #stage {
   height: calc(100% - 52px);
