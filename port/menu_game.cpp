@@ -11,9 +11,9 @@
 #include "txt_data.h"
 
 int MenuGame::Update() {
-    in.update();
+    const bool had_input = in.anyKeyPressed();
     MenuType next = MenuType(active_->ProcessEvent());
-    in.waitClean();
+    if (had_input) in.waitClean();
 
     switch (next) {
         case MenuType::Game_1:

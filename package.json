@@ -1,6 +1,6 @@
 {
   "name": "blip-blop-web",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": true,
   "description": "A bilingual browser edition of the classic arcade game with keyboard and touch controls.",
   "scripts": {

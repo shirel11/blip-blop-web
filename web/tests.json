@@ -50,7 +50,7 @@
     "steps": [
       "Load and start a one-player game through the original menus.",
       "Click Pause and confirm the original pause menu stays visible. Click Resume to continue.",
-      "Open How to play, read the controls, close the dialog and continue the same run.",
+      "Open How to play, read the controls, then close the dialog to continue the same run.",
       "Enter Game mode and use Exit game mode to return."
     ],
     "expected": "The pause menu persists until resumed, help opens and closes, and game mode can be exited without restarting the run."

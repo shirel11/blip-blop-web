@@ -496,19 +496,19 @@ a {
   }
 }
 @media (orientation: landscape) and (max-height: 600px) {
-  body.touch.running {
+  body.touch:is(.running, .immersive) {
     overflow: hidden;
   }
-  .touch.running .site-header,
-  .touch.running footer,
-  .touch.running #orientation-hint {
+  .touch:is(.running, .immersive) .site-header,
+  .touch:is(.running, .immersive) footer,
+  .touch:is(.running, .immersive) #orientation-hint {
     display: none !important;
   }
-  .touch.running main {
+  .touch:is(.running, .immersive) main {
     max-width: none;
     padding: 0;
   }
-  .touch.running #game-shell {
+  .touch:is(.running, .immersive) #game-shell {
     position: fixed;
     inset: 0;
     width: 100%;
@@ -517,30 +517,30 @@ a {
     border-radius: 0;
     padding-inline: var(--safe-left) var(--safe-right);
   }
-  .touch.running .game-toolbar {
+  .touch:is(.running, .immersive) .game-toolbar {
     height: 38px;
     min-height: 38px;
     padding: 0 8px;
   }
-  .touch.running .toolbar-actions button {
+  .touch:is(.running, .immersive) .toolbar-actions button {
     min-height: 34px;
     padding: 5px 12px;
   }
-  .touch.running #stage {
+  .touch:is(.running, .immersive) #stage {
     height: calc(100% - 38px - env(safe-area-inset-bottom, 0px));
     grid-template-columns: 148px minmax(0, 1fr) 164px;
   }
-  .touch.running #screen {
+  .touch:is(.running, .immersive) #screen {
     grid-area: auto;
     height: 100%;
     width: 100%;
     aspect-ratio: auto;
   }
-  .touch.running .movement-panel,
-  .touch.running .action-panel {
+  .touch:is(.running, .immersive) .movement-panel,
+  .touch:is(.running, .immersive) .action-panel {
     grid-area: auto;
   }
-  .touch.running .touch-panel {
+  .touch:is(.running, .immersive) .touch-panel {
     padding: 6px;
   }
 }

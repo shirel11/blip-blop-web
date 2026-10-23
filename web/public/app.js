@@ -128,7 +128,6 @@ if (!strings[language]) language = 'en';
 let phase = 'idle';
 let engineReady = false;
 let nativePaused = false;
-let helpPausedGame = false;
 let statusKey = 'downloadNote';
 let downloadMB = '';
 let lastEngineError = '';
@@ -171,6 +170,7 @@ function setLanguage(next, persist = true) {
   $('#focus').textContent = t(
     document.body.classList.contains('immersive') ? 'exitFocus' : 'focus',
   );
+  $('#pause').textContent = t(nativePaused ? 'resume' : 'pause');
   const aria = {
     ArrowUp: 'directionUp',
     ArrowDown: 'directionDown',
@@ -194,6 +194,10 @@ $('#language').onclick = () => setLanguage(language === 'he' ? 'en' : 'he');
 setLanguage(language, false);
 
 function sendKey(key, down) {
+  if (engineReady && typeof Module._web_key === 'function') {
+    Module._web_key(keyCodes[key], down ? 1 : 0);
+    return;
+  }
   const code = key.startsWith('Arrow')
     ? key
     : key === ' '
@@ -229,7 +233,11 @@ function releaseAll() {
   pointers.clear();
   reconcileKeys();
   // Also release physical keys in SDL when the tab loses focus.
-  for (const key of Object.keys(keyCodes)) sendKey(key, false);
+  for (const key of Object.keys(keyCodes)) {
+    if (engineReady && typeof Module._web_key === 'function')
+      Module._web_key(keyCodes[key], -1);
+    else sendKey(key, false);
+  }
 }
 function endPointer(e, cancelled = false) {
   const entry = pointers.get(e.pointerId);
@@ -315,7 +323,7 @@ window.Module = {
   noInitialRun: true,
   locateFile: (name) =>
     new URL(
-      './resources/' + (name === 'game.wasm' ? 'game-v2.wasm' : name),
+      './resources/' + (name === 'game.wasm' ? 'game-v2.wasm?v=0.2.1' : name),
       location.href,
     ).href,
   print: () => {},
@@ -418,7 +426,7 @@ $('#start').onclick = async () => {
       return buffer;
     };
     const script = document.createElement('script');
-    script.src = './engine-v2.js';
+    script.src = './engine-v2.js?v=0.2.1';
     script.onerror = () => fail('loadError');
     document.body.append(script);
   } catch (error) {
@@ -431,8 +439,8 @@ window.onNativePause = (paused) => {
 };
 $('#pause').onclick = () => {
   releaseAll();
-  pulseKey(nativePaused ? 'Enter' : 'Escape');
   canvas.focus({ preventScroll: true });
+  pulseKey(nativePaused ? 'Enter' : 'Escape');
 };
 $('#restart').onclick = () => {
   if (phase !== 'running' || confirm(t('restartConfirm'))) location.reload();
@@ -458,17 +466,26 @@ $('#focus').onclick = async () => {
   }
 };
 $('#help-toggle').onclick = () => {
-  helpPausedGame = phase === 'running' && !!window.gameState && !nativePaused;
   releaseAll();
-  if (helpPausedGame) pulseKey('Escape');
+  window.webHelpPaused = true;
   $('#instructions').showModal();
   $('#help-toggle').setAttribute('aria-expanded', 'true');
 };
 $('#help-close').onclick = () => $('#instructions').close();
+window.addEventListener(
+  'keydown',
+  (event) => {
+    if ($('#instructions').open && event.key === 'Escape') {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      $('#instructions').close();
+    }
+  },
+  true,
+);
 $('#instructions').addEventListener('close', () => {
+  window.webHelpPaused = false;
   $('#help-toggle').setAttribute('aria-expanded', 'false');
-  if (helpPausedGame && nativePaused) pulseKey('Enter');
-  helpPausedGame = false;
 });
 $('#share').onclick = async () => {
   const url = new URL(location.href);
@@ -513,11 +530,12 @@ window.render_game_to_text = () =>
   JSON.stringify({
     phase,
     engineReady,
+    inputBridge: typeof Module._web_key === 'function',
     language,
     touch,
     pressed: [...heldKeys],
     heapBytes: typeof HEAPU8 === 'undefined' ? null : HEAPU8.length,
     coordinateSystem: 'original 640x480; origin top-left, x right, y down',
     ...(window.gameState || {}),
-    paused: nativePaused,
+    paused: nativePaused || Boolean(window.webHelpPaused),
   });

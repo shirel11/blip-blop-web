@@ -7,6 +7,7 @@ async function state(page) { return page.evaluate(() => JSON.parse(window.render
 async function play(page) {
   await page.click('#start');
   await page.waitForFunction(() => JSON.parse(window.render_game_to_text()).phase === 'ready', {}, { timeout: 120000 });
+  assert.equal(await page.evaluate(() => typeof Module._web_key), 'function');
   await page.click('#start');
   await page.waitForTimeout(600);
   await page.keyboard.press('Escape', { delay: 150 });
@@ -76,7 +77,8 @@ async function run(type, mobile = false) {
     assert(moved.player.x > before.player.x + 30, 'Player must move');
     await page.keyboard.press('x', { delay: 160 }); await page.waitForTimeout(100);
     await page.screenshot({ path: `output/release/${mobile ? 'phone' : 'desktop'}-play.png` });
-    await page.click('#pause'); await page.waitForTimeout(350);
+    await page.click('#pause');
+    await page.waitForFunction(() => JSON.parse(window.render_game_to_text()).paused);
     const paused = await state(page); await page.waitForTimeout(350);
     assert.equal(paused.paused, true);
     assert.equal((await state(page)).player.x, paused.player.x);
@@ -85,11 +87,15 @@ async function run(type, mobile = false) {
     await page.waitForFunction(() => !JSON.parse(window.render_game_to_text()).paused);
     assert.equal((await state(page)).paused, false);
     await page.click('#help-toggle');
-    await page.waitForTimeout(300);
+    await page.waitForFunction(() => JSON.parse(window.render_game_to_text()).paused);
     assert(await page.locator('#instructions').evaluate((el) => el.open));
     assert.equal((await state(page)).paused, true);
     await page.click('#help-close');
-    await page.waitForTimeout(300);
+    await page.waitForFunction(() => !JSON.parse(window.render_game_to_text()).paused).catch(async (error) => {
+      console.log('Resume diagnostic', await state(page), await page.evaluate(() => ({ hidden:document.hidden, focused:document.activeElement.id, help:document.querySelector('#instructions').open, button:document.querySelector('#pause').textContent })));
+      await page.screenshot({path:'output/release/resume-failure.png'});
+      throw error;
+    });
     assert.equal((await state(page)).paused, false);
     // A real blur event must clear all virtual input, including deferred releases.
     await page.evaluate(() => window.dispatchEvent(new Event('blur')));
@@ -98,4 +104,4 @@ async function run(type, mobile = false) {
     console.log(type.name(), 'PASS', await state(page));
   } finally { await browser.close(); }
 }
-(async () => { if (!process.argv.includes('--webkit')) await run(chromium); await run(webkit, true); })().catch((e) => { console.error(e); process.exitCode = 1; });
+(async () => { if (!process.argv.includes('--webkit')) await run(chromium); if(!process.argv.includes('--chromium')) await run(webkit, true); })().catch((e) => { console.error(e); process.exitCode = 1; });

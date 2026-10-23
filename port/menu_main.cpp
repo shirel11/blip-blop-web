@@ -18,10 +18,10 @@ void TitleScreen::start() {
 }
 
 int TitleScreen::update() {
-    in.update();
+    const bool had_input = in.anyKeyPressed();
 
     MenuType next = MenuType(active_menu_->ProcessEvent());
-    in.waitClean();
+    if (had_input) in.waitClean();
 
     switch (next) {
         case MenuType::Main:

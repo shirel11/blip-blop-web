@@ -1709,7 +1709,6 @@ void Game::updateMenu() {
     // Appelle le menu s'il y a lieu de le faire
     //
     if (in.scanKey(DIK_ESCAPE)) {
-        EM_ASM({ if (window.onNativePause) window.onNativePause(true); });
         MenuGame menu;
         int r;
 
@@ -1723,6 +1722,9 @@ void Game::updateMenu() {
         // primSurface->Flip(NULL, DDFLIP_WAIT );
 
         in.waitClean();
+        // Signal readiness after the opening key is released. Before this
+        // point a fast touch on Resume would be consumed by waitClean().
+        EM_ASM({ if (window.onNativePause) window.onNativePause(true); });
 
         while (!(r = menu.Update()) && !app_killed) {
             manageMsg();

@@ -4,6 +4,9 @@
 
 - Hebrew/English browser UI, saved language and shareable language links.
 - iPhone landscape layout, safe areas and independent multi-touch controls.
+- A native touch-input bridge to avoid WebKit dropping synthetic keyboard events during focus changes.
+- Quick taps are queued until sampled; background/blur cancellation clears pending input. Browser help suspends the engine without opening a second native menu.
+- Native menus wait for key release only after handling input, preventing new taps from being swallowed while an idle menu waits.
 - Streaming asset decompression and an initial WASM heap of 64 MiB instead of 256 MiB.
 - A reusable streaming frame texture; no per-frame texture allocation/destruction.
 - Suspend background work and cap simulation catch-up after returning to Safari.

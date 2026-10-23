@@ -40,6 +40,18 @@
 
 Input		in;
 
+// Native touch bridge: synthetic KeyboardEvents are not consistently delivered
+// by WebKit when focus moves between the canvas and browser UI controls.
+// Preserve a quick tap until a poll sees it: 1=new down, 2=held,
+// 3=down+up between polls, 4=release. Zero leaves keyboard input alone.
+static unsigned char web_keys[256] = {};
+extern "C" EMSCRIPTEN_KEEPALIVE void web_key(int key, int pressed) {
+    if (key < 0 || key >= 256) return;
+    if (pressed > 0) web_keys[key] = 1;
+    else if (pressed < 0) web_keys[key] = 4; // cancel on blur/backgrounding
+    else web_keys[key] = (web_keys[key] == 1 || web_keys[key] == 3) ? 3 : 4;
+}
+
 //-----------------------------------------------------------------------------
 // Nom: Input::Input() - CONSTRUCTEUR -
 // Desc: Met à NULL les valeurs susceptibles de foirer
@@ -184,7 +196,7 @@ void Input::update()
 {
     emscripten_sleep(1);
     // Suspend work while Safari is backgrounded; touch keys are released by JS.
-    while (EM_ASM_INT({ return document.hidden ? 1 : 0; })) {
+    while (EM_ASM_INT({ return (document.hidden || window.webHelpPaused) ? 1 : 0; })) {
         emscripten_sleep(100);
     }
 	SDL_Event e;
@@ -296,6 +308,24 @@ void Input::update()
 		}
 
 	}
+    for (int key = 0; key < 256; ++key) {
+        if (!web_keys[key]) continue;
+        int symbol = key;
+        switch (key) {
+            case 37: symbol = SDLK_LEFT; break;
+            case 38: symbol = SDLK_UP; break;
+            case 39: symbol = SDLK_RIGHT; break;
+            case 40: symbol = SDLK_DOWN; break;
+            case 90: symbol = SDLK_z; break;
+            case 88: symbol = SDLK_x; break;
+        }
+        const bool pressed = web_keys[key] != 4;
+        if (symbol < 256) buffer[symbol] = pressed;
+        else specialsbuffer[symbol & 0xFFF] = pressed;
+        if (web_keys[key] == 1) web_keys[key] = 2;
+        else if (web_keys[key] == 3) web_keys[key] = 4;
+        else if (web_keys[key] == 4) web_keys[key] = 0;
+    }
 	/*if (dikeyb != NULL)
 		dikeyb->GetDeviceState(sizeof(buffer), (void *)&buffer);
 

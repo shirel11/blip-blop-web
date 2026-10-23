@@ -4878,20 +4878,20 @@ var ASM_CONSTS = {
   360340: () => {
     if (window.onNativePause) window.onNativePause(false);
   },
-  360399: () => (document.hidden ? 1 : 0),
-  360435: ($0) => {
+  360399: () => (document.hidden || window.webHelpPaused ? 1 : 0),
+  360461: ($0) => {
     var str =
       UTF8ToString($0) + '\n\nAbort/Retry/Ignore/AlwaysIgnore? [ariA] :';
     var reply = window.prompt(str, 'i');
     if (reply === null) reply = 'i';
     return reply.length === 1 ? reply.charCodeAt(0) : -1;
   },
-  360650: () => {
+  360676: () => {
     if (typeof AudioContext !== 'undefined') return true;
     else if (typeof webkitAudioContext !== 'undefined') return true;
     return false;
   },
-  360797: () => {
+  360823: () => {
     if (
       typeof navigator.mediaDevices !== 'undefined' &&
       typeof navigator.mediaDevices.getUserMedia !== 'undefined'
@@ -4900,7 +4900,7 @@ var ASM_CONSTS = {
     else if (typeof navigator.webkitGetUserMedia !== 'undefined') return true;
     return false;
   },
-  361031: ($0) => {
+  361057: ($0) => {
     if (typeof Module['SDL2'] === 'undefined') Module['SDL2'] = {};
     var SDL2 = Module['SDL2'];
     if (!$0) SDL2.audio = {};
@@ -4916,11 +4916,11 @@ var ASM_CONSTS = {
     }
     return SDL2.audioContext === void 0 ? -1 : 0;
   },
-  361583: () => {
+  361609: () => {
     var SDL2 = Module['SDL2'];
     return SDL2.audioContext.sampleRate;
   },
-  361651: ($0, $1, $2, $3) => {
+  361677: ($0, $1, $2, $3) => {
     var SDL2 = Module['SDL2'];
     var have_microphone = function (stream) {
       if (SDL2.capture.silenceTimer !== void 0) {
@@ -4973,7 +4973,7 @@ var ASM_CONSTS = {
         no_microphone,
       );
   },
-  363344: ($0, $1, $2, $3) => {
+  363370: ($0, $1, $2, $3) => {
     var SDL2 = Module['SDL2'];
     SDL2.audio.scriptProcessorNode = SDL2.audioContext['createScriptProcessor'](
       $1,
@@ -5011,7 +5011,7 @@ var ASM_CONSTS = {
       );
     }
   },
-  364519: ($0, $1) => {
+  364545: ($0, $1) => {
     var SDL2 = Module['SDL2'];
     var numChannels = SDL2.capture.currentCaptureBuffer.numberOfChannels;
     for (var c = 0; c < numChannels; ++c) {
@@ -5032,7 +5032,7 @@ var ASM_CONSTS = {
           setValue($0 + (j * numChannels + c) * 4, channelData[j], 'float');
     }
   },
-  365124: ($0, $1) => {
+  365150: ($0, $1) => {
     var SDL2 = Module['SDL2'];
     var buf = $0 >>> 2;
     var numChannels = SDL2.audio.currentOutputBuffer['numberOfChannels'];
@@ -5050,7 +5050,7 @@ var ASM_CONSTS = {
         channelData[j] = HEAPF32[buf + (j * numChannels + c)];
     }
   },
-  365613: ($0) => {
+  365639: ($0) => {
     var SDL2 = Module['SDL2'];
     if ($0) {
       if (SDL2.capture.silenceTimer !== void 0)
@@ -5083,7 +5083,7 @@ var ASM_CONSTS = {
       SDL2.audioContext = void 0;
     }
   },
-  366619: ($0, $1, $2) => {
+  366645: ($0, $1, $2) => {
     var w = $0;
     var h = $1;
     var pixels = $2;
@@ -5156,7 +5156,7 @@ var ASM_CONSTS = {
     }
     SDL2.ctx.putImageData(SDL2.image, 0, 0);
   },
-  368085: ($0, $1, $2, $3, $4) => {
+  368111: ($0, $1, $2, $3, $4) => {
     var w = $0;
     var h = $1;
     var hot_x = $2;
@@ -5199,14 +5199,14 @@ var ASM_CONSTS = {
     stringToUTF8(url, urlBuf, url.length + 1);
     return urlBuf;
   },
-  369073: ($0) => {
+  369099: ($0) => {
     if (Module['canvas']) Module['canvas'].style['cursor'] = UTF8ToString($0);
   },
-  369156: () => {
+  369182: () => {
     if (Module['canvas']) Module['canvas'].style['cursor'] = 'none';
   },
-  369225: () => window.innerWidth,
-  369255: () => window.innerHeight,
+  369251: () => window.innerWidth,
+  369281: () => window.innerHeight,
 };
 var _main,
   _malloc,
@@ -5250,6 +5250,7 @@ function assignWasmExports(wasmExports) {
   _main = Module['_main'] = wasmExports['__main_argc_argv'];
   _malloc = wasmExports['malloc'];
   _free = wasmExports['free'];
+  Module['_web_key'] = wasmExports['web_key'];
   _setThrew = wasmExports['setThrew'];
   __emscripten_tempret_set = wasmExports['_emscripten_tempret_set'];
   __emscripten_stack_restore = wasmExports['_emscripten_stack_restore'];
